@@ -42,7 +42,9 @@ defmodule Homepage.MixProject do
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:ex_fontawesome, "~> 0.7.1"},
+      {:tailwind, "~> 0.1", only: :dev}
     ]
   end
 
@@ -55,7 +57,7 @@ defmodule Homepage.MixProject do
   defp aliases do
     [
       setup: ["deps.get"],
-      "assets.deploy": ["esbuild default --minify", "phx.digest"]
+      "assets.deploy": ["tailwind default --minify", "esbuild default --minify", "phx.digest"]
     ]
   end
 end
