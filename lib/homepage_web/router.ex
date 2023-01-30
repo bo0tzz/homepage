@@ -18,7 +18,12 @@ defmodule HomepageWeb.Router do
     pipe_through :browser
 
     get "/", HomePageController, :index
-    get "/.well-known/immich", HomePageController, :immich_well_known
+  end
+
+  scope "/.well-known", HomepageWeb do
+    pipe_through :api
+
+    get "/immich", HomePageController, :immich_well_known
   end
 
   # Other scopes may use custom stacks.
