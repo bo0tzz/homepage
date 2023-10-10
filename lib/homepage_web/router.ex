@@ -18,6 +18,7 @@ defmodule HomepageWeb.Router do
     pipe_through :browser
 
     get "/", HomePageController, :index
+    get "/to-hn", HackernewsController, :index
   end
 
   scope "/.well-known", HomepageWeb do
