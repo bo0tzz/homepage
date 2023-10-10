@@ -25,7 +25,7 @@ defmodule Homepage.Hackernews do
           {base, query}
       end
 
-    param = URI.encode_query(query)
+    param = URI.encode_query(query, :rfc3986) |> dbg()
 
     %URI{
       scheme: "https",
@@ -44,5 +44,6 @@ defmodule Homepage.Hackernews do
     |> Floki.find("title")
     |> Floki.text()
     |> String.trim()
+    |> dbg()
   end
 end
