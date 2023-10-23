@@ -14,6 +14,17 @@ defmodule Homepage.Hackernews do
 
           {base, query}
 
+        # Redirect directly to discussion
+        %{body: %{"nbHits" => 1, "hits" => [%{"story_id" => id}]}} ->
+          query = [{"id", id}]
+          
+          base = %{
+            host: "news.ycombinator.com",
+            path: "/item"
+          }
+
+          {base, query}
+
         # Redirect to search page
         _ ->
           query = [{"q", url}]
