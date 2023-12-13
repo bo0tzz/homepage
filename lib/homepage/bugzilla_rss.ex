@@ -27,6 +27,7 @@ defmodule Homepage.BugzillaRss do
       Atomex.Entry.new(comment_url, comment_time, "New comment by #{comment["author"]}")
       |> Atomex.Entry.author(comment["author"])
       |> Atomex.Entry.content(comment["text"])
+      |> Atomex.Entry.link(comment_url)
       |> Atomex.Entry.build()
     end
 
