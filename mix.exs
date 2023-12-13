@@ -44,6 +44,7 @@ defmodule Homepage.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:req, "~> 0.4.0"},
+      {:atomex, "~> 0.5.1"},
       {:ex_fontawesome, "~> 0.7.1"},
       {:tailwind, "~> 0.1", runtime: Mix.env() == :dev}
     ]
