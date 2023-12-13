@@ -1,7 +1,7 @@
 defmodule Homepage.Hackernews do
   def to_hn(url) do
-    url = clean_fragment(url)
-    
+    url = Homepage.UriUtil.clean_fragment(url)
+
     {base, query} =
       case Req.get!("https://hn.algolia.com/api/v1/search", params: [tags: "story", query: url]) do
         # Redirect to submit page
@@ -19,7 +19,7 @@ defmodule Homepage.Hackernews do
         # Redirect directly to discussion
         %{body: %{"nbHits" => 1, "hits" => [%{"story_id" => id}]}} ->
           query = [{"id", id}]
-          
+
           base = %{
             host: "news.ycombinator.com",
             path: "/item"
@@ -47,13 +47,6 @@ defmodule Homepage.Hackernews do
     }
     |> struct(base)
     |> URI.to_string()
-  end
-
-  defp clean_fragment(url) do
-    URI.new!(url)
-    |> put_in([Access.key!(:fragment)], "")
-    |> URI.to_string()
-    |> String.trim_trailing("#")
   end
 
   defp get_page_title(url) do

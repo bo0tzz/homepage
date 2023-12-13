@@ -19,6 +19,7 @@ defmodule HomepageWeb.Router do
 
     get "/", HomePageController, :index
     get "/to-hn", HackernewsController, :index
+    get "/bugzilla-rss", BugzillaRssController, :index
   end
 
   scope "/.well-known", HomepageWeb do

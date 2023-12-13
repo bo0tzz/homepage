@@ -1,0 +1,16 @@
+<div class="flex flex-col items-center justify-center h-screen gap-4">
+  <p class="font-mono text-xl text-center font-semibold">This is an Atom feed generator for Bugzilla</p>
+  <article class="prose lg:prose-xl text-center">
+    Enter a bugzilla bug URL below to open the generated feed.
+  </article>
+  <div class="w-full max-w-sm border border-gray-700"></div>
+  <div class="flex flex-col gap-4 items-center">
+    <form action="" method="get">
+      <input class="input input-bordered" type="text" name="url" id="url" required />
+      <input class="btn" type="submit" value="Go!" />
+    </form>
+    <div>
+      <a href="https://github.com/bo0tzz/homepage/blob/main/lib/homepage/bugzilla_rss.ex">Source</a>
+    </div>
+  </div>
+</div>
