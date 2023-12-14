@@ -5,7 +5,7 @@ defmodule HomepageWeb.BugzillaRssController do
     xml = Homepage.BugzillaRss.build_feed(url)
 
     conn
-    |> put_resp_content_type("application/atom+xml")
+    |> put_resp_content_type("application/xml")
     |> send_resp(200, xml)
   end
 
