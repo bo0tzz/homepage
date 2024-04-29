@@ -12,7 +12,7 @@ defmodule Homepage.BugzillaRss do
   end
 
   def build_feed(bug_url) do
-    %URI{host: "bugzilla.mozilla.org", query: query} = uri = URI.new!(bug_url)
+    %URI{host: host = "bugzilla.mozilla.org", query: query} = uri = URI.new!(bug_url)
     %{"id" => id} = URI.decode_query(query)
 
     bug = get_bug(host, id)
