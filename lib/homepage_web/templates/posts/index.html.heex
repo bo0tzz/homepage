@@ -1,19 +1,13 @@
-<h1>Listing all posts</h1>
+<div class="flex flex-col items-center justify-center h-screen gap-4 p-4">
+  <%= for post <- @posts do %>
+    <div id="{post.id}" style="margin-bottom: 3rem;">
+      <a href={~p"/posts/#{post.id}"}>
+        <p class="font-mono text-xl font-semibold">
+          <%= post.title %>
+        </p>
 
-<%= for post <- @posts do %>
-  <div id="{post.id}" style="margin-bottom: 3rem;">
-    <h2>
-      <.a href={~p"/blog/#{post.id}"}><%= post.title %></.a>
-    </h2>
-
-    <p>
-      <time><%= post.date %></time> by <%= post.author %>
-    </p>
-
-    <p>
-      Tagged as <%= Enum.join(post.tags, ", ") %>
-    </p>
-
-    <%= raw post.description %>
-  </div>
-<% end %>
+        <%= raw post.description %>
+      </a>
+    </div>
+  <% end %>
+</div>

@@ -1,13 +1,20 @@
-<.link href={~p"/blog"}>← All posts</.link>
+<div class="lg:flex flex-col items-center h-screen p-4 lg:p-20">
+    <a href={~p"/posts"} class="p-2">← All posts</a>
+    <div id="{@post.id}" style="margin-bottom: 3rem;">
+      <p class="font-mono text-xl font-semibold">
+        <%= @post.title %>
+      </p>
+      <p>
+        <time><%= @post.date %></time>
+      </p>
 
-<h1><%= @post.title %></h1>
+      <div class="p-4">
+        <div class="w-full max-w-sm border border-gray-700"></div>
+      </div>
 
-<p>
-  <time><%= @post.date %></time> by <%= @post.author %>
-</p>
-
-<p>
-  Tagged as <%= Enum.join(@post.tags, ", ") %>
-</p>
-
-<%= raw @post.body %>
+      <article class="prose lg:prose-xl">
+        <%= raw @post.body %>
+      </article>
+    </div>
+  
+</div>

@@ -22,8 +22,8 @@ defmodule HomepageWeb.Router do
     get "/bugzilla-rss", BugzillaRssController, :index
 
 
-    get "/posts", BlogController, :index
-    get "/posts/:id", BlogController, :show
+    get "/posts", PostsController, :index
+    get "/posts/:id", PostsController, :show
   end
 
   scope "/.well-known", HomepageWeb do

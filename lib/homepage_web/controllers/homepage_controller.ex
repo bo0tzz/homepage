@@ -2,7 +2,7 @@ defmodule HomepageWeb.HomePageController do
   use HomepageWeb, :controller
 
   def index(conn, _params) do
-    render(conn, "index.html")
+    render(conn, "index.html", posts: Homepage.Posts.recent_posts())
   end
 
   def immich_well_known(conn, _params) do

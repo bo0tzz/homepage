@@ -50,7 +50,8 @@ config :homepage, HomepageWeb.Endpoint,
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"lib/homepage_web/(live|views)/.*(ex)$",
-      ~r"lib/homepage_web/templates/.*(eex)$"
+      ~r"lib/homepage_web/templates/.*(eex)$",
+      ~r"posts/*/.*(md)$"
     ]
   ]
 
