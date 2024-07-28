@@ -46,7 +46,9 @@ defmodule Homepage.MixProject do
       {:req, "~> 0.4.0"},
       {:atomex, "~> 0.5.1"},
       {:ex_fontawesome, "~> 0.7.1"},
-      {:tailwind, "~> 0.1", runtime: Mix.env() == :dev}
+      {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
+      {:nimble_publisher, "~> 1.1"},
+      {:makeup_elixir, "~> 0.16.2"}
     ]
   end
 
