@@ -28,6 +28,8 @@ defmodule HomepageWeb.ConnCase do
 
       # The default endpoint for testing
       @endpoint HomepageWeb.Endpoint
+
+      use AppWeb, :verified_routes
     end
   end
 

@@ -17,12 +17,16 @@ defmodule HomepageWeb do
   and import those modules here.
   """
 
+  def static_paths, do: ~w(assets fonts images favicon.ico robots.txt)
+
   def controller do
     quote do
       use Phoenix.Controller, namespace: HomepageWeb
 
       import Plug.Conn
       alias HomepageWeb.Router.Helpers, as: Routes
+
+      unquote(verified_routes())
     end
   end
 
@@ -95,6 +99,17 @@ defmodule HomepageWeb do
 
       import HomepageWeb.ErrorHelpers
       alias HomepageWeb.Router.Helpers, as: Routes
+
+      unquote(verified_routes())
+    end
+  end
+
+  def verified_routes do
+    quote do
+      use Phoenix.VerifiedRoutes,
+        endpoint: HomepageWeb.Endpoint,
+        router: HomepageWeb.Router,
+        statics: HomepageWeb.static_paths()
     end
   end
 
