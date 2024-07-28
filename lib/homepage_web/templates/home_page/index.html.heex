@@ -2,7 +2,7 @@
   <p class="fono-mono text-xl font-semibold">Recent posts</p>
   <div class="w-full max-w-sm border border-gray-700"></div>
   <%= for post <- @posts do %>
-    <div id="{post.id}" style="margin-bottom: 3rem;">
+    <div id="{post.id}">
       <a href={~p"/posts/#{post.id}"}>
         <p class="font-mono text-xl font-semibold">
           <%= post.title %>
@@ -22,6 +22,11 @@
     <div>
       <%= link to: "https://t.me/bo0tzz" do %>
         <%= FontAwesome.icon("telegram", type: "brands", class: "h-8 w-8 fill-[#229ED9]") %>
+      <% end %>
+    </div>
+    <div>
+      <%= link to: "mailto:homepage@bo0tzz.me" do %>
+        <%= FontAwesome.icon("envelope", type: "solid", class: "h-8 w-8 fill-[#a49a9a]") %>
       <% end %>
     </div>
   </div>
