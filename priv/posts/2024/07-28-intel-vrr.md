@@ -21,7 +21,7 @@ The problems I was seeing were:
 
 The fix was surprisingly hard to find, but ended up being pretty easy to apply. The master branch of xorg/xserver includes [a merge request that adds a TearFree option](https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/1006) for the modesetting driver, so here's what I did:
 
-1. `pacman -S xorg-xserver-git` to get an xserver build with the above fix in it. As pacman replaces xserver, it will flag a few conflicting packages. Make sure to choose the `-git` option each time.
+1. `pacman -S xorg-server-git` to get an xserver build with the above fix in it. As pacman replaces xserver, it will flag a few conflicting packages. Make sure to choose the `-git` option each time.
 2. Set the X config to enable this option as well as VRR
 
 ```bash
