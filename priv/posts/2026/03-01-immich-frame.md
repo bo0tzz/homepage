@@ -1,8 +1,7 @@
 %{
 title: "Turning an old laptop into an Immich photo frame",
 author: "bo0tzz",
-description: "From ewaste to ewaste with a purpose",
-draft: true
+description: "From ewaste to ewaste with a purpose"
 }
 
 ---
