@@ -4,6 +4,45 @@
 
 /* This file is for your main application CSS */
 
+/* Side-by-side images in posts */
+.image-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.image-row img {
+  flex: 1;
+  min-width: 0;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  cursor: zoom-out;
+  animation: 0.2s ease-out fade-in-keys;
+}
+
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+
+article img {
+  cursor: zoom-in;
+}
+
 /* Alerts and form errors used by phx.new */
 .alert {
   padding: 15px;

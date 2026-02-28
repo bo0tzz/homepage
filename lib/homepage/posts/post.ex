@@ -1,6 +1,6 @@
 defmodule Homepage.Posts.Post do
   @enforce_keys [:id, :author, :title, :body, :description, :date]
-  defstruct [:id, :author, :title, :body, :description, :date]
+  defstruct [:id, :author, :title, :body, :description, :date, draft: false]
 
   def build(filename, attrs, body) do
     [year, month_day_id] = filename |> Path.rootname() |> Path.split() |> Enum.take(-2)

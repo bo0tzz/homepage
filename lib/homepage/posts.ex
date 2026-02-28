@@ -10,7 +10,8 @@ defmodule Homepage.Posts do
   @posts Enum.sort_by(@posts, & &1.date, {:desc, Date})
 
   def all_posts, do: @posts
-  def recent_posts, do: Enum.take(all_posts(), 3)
+  def published_posts, do: Enum.reject(all_posts(), & &1.draft)
+  def recent_posts, do: Enum.take(published_posts(), 3)
 
   defmodule NotFoundError, do: defexception [:message, plug_status: 404]
 

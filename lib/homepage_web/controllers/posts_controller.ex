@@ -4,7 +4,7 @@ defmodule HomepageWeb.PostsController do
   alias Homepage.Posts
 
   def index(conn, _params) do
-    render(conn, "index.html", posts: Posts.all_posts())
+    render(conn, "index.html", posts: Posts.published_posts())
   end
 
   def show(conn, %{"id" => id}) do

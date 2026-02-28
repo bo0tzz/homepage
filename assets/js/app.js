@@ -42,3 +42,15 @@ liveSocket.connect()
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket
 
+// Image lightbox
+document.addEventListener("click", e => {
+  if (e.target.closest("article") && e.target.tagName === "IMG") {
+    const overlay = document.createElement("div")
+    overlay.className = "lightbox-overlay"
+    overlay.innerHTML = `<img src="${e.target.src}" alt="${e.target.alt}">`
+    overlay.addEventListener("click", () => overlay.remove())
+    document.addEventListener("keydown", e => { if (e.key === "Escape") overlay.remove() }, { once: true })
+    document.body.appendChild(overlay)
+  }
+})
+

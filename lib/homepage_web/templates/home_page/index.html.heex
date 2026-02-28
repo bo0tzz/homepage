@@ -1,7 +1,10 @@
 <div class="flex flex-col items-center justify-center h-screen gap-4 p-4">
   <p class="fono-mono text-xl font-semibold">Recent posts</p>
   <div class="w-full max-w-sm border border-gray-700"></div>
-  <%= for post <- @posts do %>
+  <%= for {post, index} <- Enum.with_index(@posts) do %>
+    <%= if index > 0 do %>
+      <div class="w-full max-w-[12rem] border border-gray-700"></div>
+    <% end %>
     <div id="{post.id}">
       <a href={~p"/posts/#{post.id}"}>
         <p class="font-mono text-xl font-semibold">

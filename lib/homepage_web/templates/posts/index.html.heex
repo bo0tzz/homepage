@@ -1,6 +1,8 @@
-<div class="flex flex-col items-center justify-center h-screen gap-4 p-4">
-  <%= for post <- @posts do %>
-    <div id="{post.id}" style="margin-bottom: 3rem;">
+<div class="flex flex-col items-center justify-center min-h-screen gap-4 p-4">
+  <a href={~p"/"} class="p-2">← Home</a>
+  <div class="w-full max-w-sm border border-gray-700"></div>
+  <%= for {post, index} <- Enum.with_index(@posts) do %>
+    <div id="{post.id}">
       <a href={~p"/posts/#{post.id}"}>
         <p class="font-mono text-xl font-semibold">
           <%= post.title %>
@@ -9,5 +11,9 @@
         <%= raw post.description %>
       </a>
     </div>
+    <%= if index < length(@posts) - 1 do %>
+      <div class="w-full max-w-[12rem] border border-gray-700"></div>
+    <% end %>
   <% end %>
+  <div class="w-full max-w-sm border border-gray-700"></div>
 </div>
