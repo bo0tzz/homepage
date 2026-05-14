@@ -4,7 +4,6 @@ import Config
 # you can enable the server option below.
 config :homepage, HomepageWeb.Endpoint,
   http: [ip: {127, 0, 0, 1}, port: 4002],
-  secret_key_base: "KY1TKq90Y0Q0Nh2aD4l8iSTSggZW+6ekPFNLSOFUZXN62pKwRwc7seojbJtBcpAq",
   server: false
 
 # Print only warnings and errors during test

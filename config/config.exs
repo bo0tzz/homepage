@@ -11,8 +11,7 @@ import Config
 config :homepage, HomepageWeb.Endpoint,
   url: [host: "localhost"],
   render_errors: [view: HomepageWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: Homepage.PubSub,
-  live_view: [signing_salt: "lA0WiNy5"]
+  pubsub_server: Homepage.PubSub
 
 # Configure esbuild (the version is required)
 config :esbuild,
