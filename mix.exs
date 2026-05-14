@@ -5,7 +5,7 @@ defmodule Homepage.MixProject do
     [
       app: :homepage,
       version: "0.1.0",
-      elixir: "~> 1.12",
+      elixir: "~> 1.18",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
@@ -45,7 +45,7 @@ defmodule Homepage.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:req, "~> 0.4.0"},
       {:atomex, "~> 0.5.1"},
-      {:ex_fontawesome, "~> 0.7.1"},
+      {:ex_fontawesome, github: "miguel-s/ex_fontawesome", tag: "v0.7.2"},
       {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
       {:nimble_publisher, "~> 1.1"},
       {:makeup_elixir, "~> 0.16.2"}

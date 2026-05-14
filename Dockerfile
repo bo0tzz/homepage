@@ -12,8 +12,8 @@
 #   - https://pkgs.org/ - resource for finding needed packages
 #   - Ex: hexpm/elixir:1.13.3-erlang-24.3.2-debian-bullseye-20210902-slim
 #
-ARG BUILDER_IMAGE="hexpm/elixir:1.17.2-erlang-27.0.1-debian-bullseye-20240722-slim"
-ARG RUNNER_IMAGE="debian:bullseye-20240722-slim"
+ARG BUILDER_IMAGE="hexpm/elixir:1.19.5-erlang-28.4.3-debian-bookworm-20260505-slim"
+ARG RUNNER_IMAGE="debian:bookworm-20260505-slim"
 
 FROM ${BUILDER_IMAGE} as builder
 
@@ -70,7 +70,7 @@ RUN mix release
 # the compiled release and other runtime necessities
 FROM ${RUNNER_IMAGE}
 
-RUN apt-get update -y && apt-get install -y libstdc++6 openssl libncurses5 locales \
+RUN apt-get update -y && apt-get install -y libstdc++6 openssl libncurses6 locales \
   && apt-get clean && rm -f /var/lib/apt/lists/*_*
 
 # Set the locale
